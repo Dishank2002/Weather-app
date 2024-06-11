@@ -56,7 +56,7 @@ function App() {
                             }}
                         />
                     </div>
-                    {suggestions.length > 0 && (
+                    {input && suggestions.length > 0 && (
                         <ul className='absolute bg-white w-[15rem] shadow-2xl rounded mt-1 p-2 suggestions-dropdown'>
                             {suggestions.map((suggestion, index) => (
                                 <li

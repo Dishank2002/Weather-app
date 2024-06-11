@@ -1,0 +1,13 @@
+/* src/App.css */
+.suggestions-dropdown {
+    color: black;
+}
+
+.suggestions-dropdown li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestions-dropdown li:hover {
+    background-color: #f0f0f0;
+}

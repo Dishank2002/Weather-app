@@ -2,19 +2,105 @@
 @tailwind components;
 @tailwind utilities;
 
-*,
-::before,
-::after {
+*, ::before, ::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.glassCard{
-  background:  rgba(225,225,225,0.18);
-  box-shadow:  0 8px 32px 0 rgba(31,38,135,0.37);
+/* Background */
+.background-layout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.suggestions-dropdown {
+  color: #333;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.suggestions-dropdown li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestions-dropdown li:hover {
+  background-color: #eee;
+}
+
+
+.glassCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+
+.custom-card {
+  background: rgba(255, 255, 255, 0.08); 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  width: 18rem; 
+  height: auto; 
+}
+
+.custom-mini-card {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-radius: 10px;
-  border: 1px solid rgba(225,225,225,0.18);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 10px;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 7rem; 
+  height: auto; 
+}
+
+.custom-mini-card:hover {
+  transform: scale(1.05);
+}
+
+.custom-mini-card .divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 3px 0;
+}
+
+.custom-mini-card .divider-vertical {
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 3px; 
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
 }

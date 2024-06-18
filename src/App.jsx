@@ -34,7 +34,8 @@ function App() {
     }, []);
 
     return (
-        <div className='w-full h-screen text-white px-8'>
+        <div className='w-full h-screen text-white px-8 relative'>
+            <BackgroundLayout />
             <nav className='w-full p-3 flex justify-between items-center'>
                 <h1 className='font-bold tracking-wide text-3xl'>Weather App</h1>
                 <div className='relative'>
@@ -70,28 +71,29 @@ function App() {
                     )}
                 </div>
             </nav>
-            <BackgroundLayout></BackgroundLayout>
-            <main className='w-full flex flex-wrap gap-8 py-4 px-[10%] items-center justify-center'>
-                <WeatherCard
-                    place={thisLocation}
-                    windspeed={weather.wspd}
-                    humidity={weather.humidity}
-                    temperature={weather.temp}
-                    heatIndex={weather.heatindex}
-                    iconString={weather.conditions}
-                    conditions={weather.conditions}
-                />
-                <div className='flex justify-center gap-8 flex-wrap w-[60%]'>
-                    {values?.slice(1, 7).map(curr => {
-                        return (
-                            <MiniCard
-                                key={curr.datetime}
-                                time={curr.datetime}
-                                temp={curr.temp}
-                                iconString={curr.conditions}
-                            />
-                        );
-                    })}
+            <main className='w-full flex flex-col items-center gap-4 py-4'>
+                <div className='flex justify-center mb-4'>
+                    <WeatherCard
+                        place={thisLocation}
+                        windspeed={weather.wspd}
+                        humidity={weather.humidity}
+                        temperature={weather.temp}
+                        heatIndex={weather.heatindex}
+                        iconString={weather.conditions}
+                        conditions={weather.conditions}
+                    />
+                </div>
+                <div className='flex gap-2 flex-wrap justify-center'>
+                    {values?.slice(1, 7).map(curr => (
+                        <MiniCard
+                            key={curr.datetime}
+                            time={curr.datetime}
+                            temp={curr.temp}
+                            iconString={curr.conditions}
+                            windspeed={curr.wspd}
+                            humidity={curr.humidity}
+                        />
+                    ))}
                 </div>
             </main>
         </div>
